@@ -76,3 +76,39 @@ console.log("Executing sum3(10,20,35) -->", theSumOf3);
 // RETURN VALUE & CONSOLE.LOG THEY ARE UNRELATED.
 // IF YOU RETURN SOMETHING, YOU HAVE A VALUE THAT YOU CAN USE.
 // IF YOU CONSOLE.LOG, YOU JUST PRINT SOMETHING TO THE CONSOLE.
+
+printTitle("Function to compute the perimeter of a rectangle");
+
+// We want to define a function that, given base & height
+// computes the perimeter of a rectangle with such base & height values.
+// inputs - two numbers, base & height
+// output - a number, perimeter
+
+function perimeterOfRectangle(base, height) {
+  return (base + height) * 2;
+}
+
+let perimeter1 = perimeterOfRectangle(20, 10);
+let perimeter2 = perimeterOfRectangle(5, 2);
+
+console.log("Perimeter of a 20 - 10 rectangle:", perimeter1);
+console.log("Perimeter of a 5 - 2 rectangle:", perimeter2);
+
+printTitle("Perimeters of a list of rectangles");
+
+let rectangles = [
+  { base: 10, height: 5 },
+  { base: 2, height: 2 },
+  { base: 2, height: 3 },
+  { base: 3, height: 2 },
+  { base: 2, height: 14 },
+  { base: 10, height: 2 },
+];
+
+// We want to write a piece of code that prints the perimeters
+// of all these rectangles
+for (let index = 0; index < rectangles.length; index++) {
+  let rectangle = rectangles[index];
+  console.log("Perimeter of", rectangle);
+  console.log(perimeterOfRectangle(rectangle.base, rectangle.height));
+}
