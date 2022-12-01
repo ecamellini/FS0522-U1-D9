@@ -63,3 +63,32 @@ for (let index = 0; index < products.length; index++) {
     console.log(`${product.name} - ${product.price} euros`);
   }
 }
+
+console.log("\n-------PRINT ALL TAGS FROM ALL BOOKS----------\n");
+
+let books = [
+  { title: "Romeo & Juliet", tags: ["theater", "tragedy"] },
+  { title: "Twelwth Night", tags: ["theater", "comedy"] },
+  { title: "Much Ado For Nothing", tags: ["theater", "tragedy"] },
+  { title: "Black Swan", tags: ["economics", "business"] },
+  { title: "The Lord Of the Rings", tags: ["novel", "fantasy"] },
+];
+
+// We want, for each book, to print all its tags.
+
+let index = 0;
+while (index < books.length) {
+  // DO SOMETHING WITH THE INDEX
+  let book = books[index]; // Let's take the book with position index
+
+  console.log(`Book title: ${book.title}`);
+  console.log("Tags:");
+  for (let i = 0; i < book.tags.length; i++) {
+    // For every tag...
+    console.log(book.tags[i]);
+  }
+
+  console.log("\n");
+  // At the end of the iteration:
+  index++; // We increment the index by 1
+}
