@@ -112,3 +112,85 @@ for (let index = 0; index < rectangles.length; index++) {
   console.log("Perimeter of", rectangle);
   console.log(perimeterOfRectangle(rectangle.base, rectangle.height));
 }
+
+printTitle("STRINGS ARE JUST ARRAYS");
+
+// STRINGS ARE ACTUALLY ARRAYS :)
+let string = "A very long string with many words and bla bla bla.";
+
+for (let i = 0; i < string.length; i++) {
+  let ithChar = string[i];
+  console.log(`Char position ${i} ----> ${ithChar}`); // This will print the char, on the line.
+}
+
+// This is actually the same as having something like that:
+// string = [
+//   "A",
+//   " ",
+//   "v",
+//   "e",
+//   "r",
+//   "y",
+//   // .......
+// ];
+
+// Since strings are just arrays, they have functions that can be called with the dot
+console.log("Example of string.toUpperCase()", string.toUpperCase());
+console.log("Example of string.startsWith('A')", string.startsWith("A"));
+console.log("Example of string.startsWith('a')", string.startsWith("a"));
+console.log(
+  "Example of string.startsWith('A very')",
+  string.startsWith("A very")
+);
+// Lowercase & uppercase characters ARE ALWAYS DIFFERENT CHARACTERS
+// A vs a, it's like saying, m vs u, any different characters...
+
+if (string.startsWith("A") || string.startsWith("B")) {
+  console.log("The strings starts with A or B!");
+}
+
+printTitle("Function that counts a character in a string");
+
+// Define a function that takes a string, a charactes, and tells us
+// how many times the character occurs inside the string.
+
+// - inputs: a string, a char (a string of length 1)
+// - output: a number, the number of times this char appears in the string
+
+// EXAMPLE
+// inputs: "Hello World!",  "o"
+// result: 2 --> because the "o" appears two times inside the string "Hello World!"
+
+function countChar(string, char) {
+  // STRINGS ARE ACTUALLY ARRAYS :)
+  let count = 0; // Somewhere to store the count
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === char) {
+      count += 1;
+    }
+  }
+
+  return count;
+}
+
+console.log(
+  'countChar("Hello World!", "o") ---- ',
+  countChar("Hello World!", "o")
+);
+
+let lorem = `
+Porro quo qui dolorem aperiam enim unde delectus rerum. Expedita perferendis exercitationem nesciunt molestiae explicabo hic facilis. Quia ullam iste reprehenderit qui quod minima. Quam omnis reprehenderit enim tempore.
+
+Adipisci commodi earum qui voluptatum. Facere natus omnis commodi magnam aperiam maxime maiores. In libero optio laborum quisquam et. Quam aliquid quasi aliquam libero delectus harum qui voluptate.
+
+Placeat fuga delectus laudantium perferendis accusamus. Earum iusto voluptatibus dolorum quia ut est. Aut optio ex consequatur inventore molestiae minus sed cumque. Vitae repellat consequatur fuga. Minus molestias saepe soluta enim. Sapiente ipsa explicabo delectus necessitatibus et ut nulla occaecati.
+
+Deleniti molestias dolor aut voluptatem fugiat odio et ea. Aspernatur natus pariatur est debitis. Et totam nihil minus aspernatur qui consectetur iure. Vero cumque deserunt in corrupti unde vitae ad soluta. Corporis sit vel quam dolorem. Atque pariatur facilis excepturi nemo distinctio.
+
+Nobis eos iure quis illo. Cupiditate iste soluta quis et atque saepe. Eius ut ducimus perferendis deserunt optio facere reiciendis ullam. Quas voluptatum quis quibusdam. Et magni quidem porro eius deleniti id quia perferendis. Eum praesentium dolores et sit.`;
+
+console.log(
+  "How many times we have the l in Lorem Ipsum text",
+  countChar(lorem, "l")
+);
